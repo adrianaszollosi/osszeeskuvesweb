@@ -18,10 +18,35 @@
 }
 
 body {
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #161b3e 0, #050814 55%, #02030a 100%);
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: radial-gradient(
+    circle at top,
+    #161b3e 0,
+    #050814 55%,
+    #02030a 100%
+  );
   color: var(--text);
   min-height: 100vh;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1220px;
+  margin: 18px auto 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 .page {
@@ -117,19 +142,30 @@ header.center .subtitle {
 .card {
   position: relative;
   padding: 20px 20px 18px;
-  background: radial-gradient(circle at top left, rgba(255, 75, 110, 0.12), transparent 50%), var(--bg-elevated);
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 75, 110, 0.12),
+      transparent 50%
+    ),
+    var(--bg-elevated);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition), transform 150ms ease-out;
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition), background var(--transition),
+    transform 150ms ease-out;
 }
 
 .card::before {
   content: "";
   position: absolute;
   inset: -40%;
-  background: radial-gradient(circle at top, rgba(255, 75, 110, 0.13), transparent 55%);
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 75, 110, 0.13),
+    transparent 55%
+  );
   opacity: 0;
   transition: opacity var(--transition);
   pointer-events: none;
@@ -139,7 +175,12 @@ header.center .subtitle {
   transform: translateY(-6px) translateZ(0);
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.75);
   border-color: rgba(255, 75, 110, 0.65);
-  background: radial-gradient(circle at top left, rgba(255, 75, 110, 0.18), transparent 55%), #090d1c;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 75, 110, 0.18),
+      transparent 55%
+    ),
+    #090d1c;
 }
 
 .card:hover::before {
@@ -193,8 +234,6 @@ header.center .subtitle {
   color: #d3f0ff;
 }
 
-/* Közös szövegek */
-
 .section-title {
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -214,7 +253,11 @@ p {
   margin-top: 8px;
   padding: 10px 11px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(10, 241, 158, 0.07), rgba(93, 247, 216, 0.02));
+  background: linear-gradient(
+    135deg,
+    rgba(10, 241, 158, 0.07),
+    rgba(93, 247, 216, 0.02)
+  );
   border: 1px solid rgba(10, 241, 158, 0.35);
   font-size: 0.88rem;
 }
@@ -237,8 +280,6 @@ p {
   max-width: 760px;
   margin-inline: auto;
 }
-
-/* Forrás footer */
 
 .sources {
   margin-top: 60px;
@@ -281,8 +322,6 @@ p {
   color: var(--text-muted);
   line-height: 1.5;
 }
-
-/* Aloldalak layout */
 
 .top-nav {
   display: flex;
@@ -377,9 +416,7 @@ p {
   margin-bottom: 4px;
 }
 
-/* Responsív */
-
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
   }
